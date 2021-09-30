@@ -6,12 +6,12 @@
 # En esta función se quita el "0b" para dejar el "11"
 # ------------------------------------------------------
 def dec2bin(numero_decimal, numero_bits):
-    numero_binario = bin(numero_decimal)
-    numero_binario = numero_binario[2:len(numero_binario)]  # quita el "0b" del principio
+    n_b = bin(numero_decimal)
+    n_b = n_b[2:len(n_b)]  # quita el "0b" del principio
     
-    while len(numero_binario) < numero_bits:      # añade 0's a la izquierda si hace falta
-        numero_binario = "0" + numero_binario
-    return numero_binario
+    while len(n_b) < numero_bits:      # añade 0's a la izquierda si hace falta
+         n_b = "0" + n_b
+    return n_b
 
 # ----------------------------------------
 # MAIN
@@ -23,8 +23,8 @@ if __name__ == "__main__":
     numero_bits = int(input("Cuantos bits tendrá el número binario: "))
 
     # se llama a la función dec2bin() para hacer la conversión
-    numero_binario = dec2bin(numero_decimal, numero_bits)
+    n_b = dec2bin(numero_decimal, numero_bits)
 
     # Muestra por pantalla el resultado.
     # Para imprimir un entero es necesario convertirlo a string con str()
-    print("El numero " + str(numero_decimal) + " es " + numero_binario + " en binario con " + str(numero_bits) + " bits.")
+    print("El numero " + str(numero_decimal) + " es " + n_b + " en binario con " + str(numero_bits) + " bits.")
